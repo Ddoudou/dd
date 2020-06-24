@@ -1,5 +1,6 @@
 <template>
   <div id="index">
+    <router-view></router-view>
     <div class="content">
       <van-cell-group>
         <van-field v-model="matchID" type="digit" label="比赛ID" placeholder="请输入比赛ID">
@@ -21,7 +22,7 @@
               <template #title>
                 <van-row type="flex" align="center" justify="center">
                   <van-col span="6">
-                    <van-image round width="3rem" height="3rem" fit="contain" :src="item.ava" />
+                    <van-image round width="3rem" height="3rem" fit="contain" :src="item.ava"/>
                   </van-col>
                   <van-col span="18">{{item.personaname}}</van-col>
                 </van-row>
@@ -61,6 +62,8 @@ Vue.use(List);
 
 export default {
   name: "index",
+    components:{
+    },
   data() {
     return {
       matchID: "",
@@ -69,6 +72,7 @@ export default {
       playerListCollapse: []
     };
   },
+
   methods: {
     onLoad() {
       Toast.loading({
@@ -101,7 +105,9 @@ export default {
 
 <style>
 #index {
-  background-color: bisque;
+  background-image: url(https://cdn.jsdelivr.net/gh/Ddoudou/ddoudou.github.io/static/img/bg0.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
   min-height: 100vh;
 }
 .content {

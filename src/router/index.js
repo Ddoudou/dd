@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from '../pages/index'
 
+
 Vue.use(VueRouter)
 
 const routes= [
