@@ -105,7 +105,7 @@ export default {
 
 <style>
 #index {
-  background-image: url(https://cdn.jsdelivr.net/gh/Ddoudou/dd/static/img/bg0.webp);
+  background-image: url(https://cdn.jsdelivr.net/gh/Ddoudou/dd/src/static/img/bg0.webp);
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
