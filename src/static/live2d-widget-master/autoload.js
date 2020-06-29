@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 // 注意：live2d_path 参数应使用绝对路径
 const live2d_path = "https://cdn.jsdelivr.net/gh/Ddoudou/dd/src/static/live2d-widget-master/";
 //const live2d_path = "/live2d-widget/";
@@ -47,7 +48,7 @@ console.log(`
 _____      _                 _             
 |  __ \    | |               | |            
 | |  | | __| | ___  _   _  __| | ___  _   _ 
-| |  | |/ _` |/ _ \| | | |/ _` |/ _ \| | | |
+| |  | |/ _' |/ _ \| | | |/ _' |/ _ \| | | |
 | |__| | (_| | (_) | |_| | (_| | (_) | |_| |
 |_____/ \__,_|\___/ \__,_|\__,_|\___/ \__,_|
 `);
