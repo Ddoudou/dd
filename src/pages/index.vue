@@ -5,7 +5,7 @@
       <van-cell-group>
         <van-field v-model="matchID" type="digit" label="比赛ID" placeholder="请输入比赛ID">
           <template #button>
-            <van-button size="small" type="primary" @click="onLoad">确定</van-button>
+            <van-button size="small" type="primary" @click="getMatchInfo">确定</van-button>
           </template>
         </van-field>
       </van-cell-group>
@@ -14,7 +14,7 @@
           <van-collapse v-model="playerListCollapse">
             <van-collapse-item
               v-for="item in playerList"
-              :key="item.personaname"
+              :key="item.player_slot"
               :name="item.index"
               :is-link="false"
               accordion
@@ -62,8 +62,7 @@ Vue.use(List);
 
 export default {
   name: "index",
-    components:{
-    },
+  components: {},
   data() {
     return {
       matchID: "",
@@ -74,7 +73,7 @@ export default {
   },
 
   methods: {
-    onLoad() {
+    getMatchInfo() {
       Toast.loading({
         message: "比赛信息加载中...",
         forbidClick: true
@@ -89,11 +88,16 @@ export default {
         Toast.clear();
         playerListBase.forEach(function(value, index, arr) {
           var playerUrl = baseUrl + "players/" + value.account_id;
-
+          
           // 获取玩家头像
-          axios.get(playerUrl).then(function(res) {
-            arr[index].ava = res.data.profile.avatarfull;
-          });
+          if (value.account_id) {
+            axios.get(playerUrl).then(function(res) {
+              arr[index].ava = res.data.profile.avatarfull;
+            });
+          }
+          else{
+            arr[index].personaname = "匿名玩家";
+          }
         });
         that.playerList = playerListBase;
       });
